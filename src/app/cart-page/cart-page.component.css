@@ -1,0 +1,167 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Image Styling */
+li > div:first-child {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+li > div:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Food Name Link */
+li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: #4a90e2;
+}
+
+/* Quantity Select */
+select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+/* Price */
+li > div:nth-child(4) {
+    font-weight: 600;
+    color: #2ecc71;
+    margin: 0 15px;
+}
+
+/* Remove Button */
+.remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Checkout Section */
+.checkout {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.checkout-summary {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.foods-count, .total-price {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.foods-count {
+    color: green;
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+
+.total-price {
+    color: #2ecc71;
+}
+
+.checkout .foods-count::before {
+    content: 'Count: ';
+    color: grey;
+    white-space: nowrap;
+}
+
+.checkout .total-price::before {
+    content: 'Price: ';
+    color: grey;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .checkout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .checkout-summary {
+        margin-left: 0;
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+    .foods-count, .total-price {
+        margin: 10px 0;
+    }
+
+    .checkout .foods-count::before,
+    .checkout .total-price::before {
+        position: relative;
+        left: 0;
+        margin-right: 10px;
+    }
+}
